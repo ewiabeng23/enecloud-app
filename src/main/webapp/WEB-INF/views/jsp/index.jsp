@@ -312,7 +312,6 @@
                 <p>Our team of certified experts brings decades of experience implementing DevOps practices at scale for Fortune 500 companies and high-growth startups alike.</p>
                 
                 <div class="contact-info mt-5">
-                    <h3><i class="fas fa-phone-alt me-2"></i>+91 9980923216</h3>
                     <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>peoplecentre@enecloudtech.com</h3>
                     <p class="mt-3">Available 24/7 for critical infrastructure support</p>
                 </div>
