@@ -161,7 +161,7 @@
             </p>
             <div class="mt-4">
                 <a class="btn btn-primary btn-lg me-3" href="#" role="button">
-                    <i class="fas fa-rocket me-2"></i>Our Services
+                    <i class="fas fa-rocket me-2"></i>Explore Courses
                 </a>
                 <a class="btn btn-outline-light btn-lg" href="#" role="button">
                     <i class="fas fa-phone-alt me-2"></i>Contact Us
