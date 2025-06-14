@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional DevOps Solutions">
-    <title>E&E Technologies - DevOps Engineering</title>
+    <meta name="description" content="Enterprise DevOps Solutions">
+    <title>E&E Technologies | DevOps Engineering</title>
 
     <spring:url value="/resources/core/css/hello.css" var="coreCss" />
     <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
@@ -16,106 +16,213 @@
     
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --white: #e6f1ff;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
+            font-family: 'Calibre', 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            min-height: 100vh;
         }
         
         .navbar {
-            background-color: var(--primary-color) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(10, 25, 47, 0.9) !important;
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
         }
         
         .navbar-brand {
             font-weight: 700;
-            color: white !important;
+            color: var(--accent) !important;
             font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
         }
         
         .jumbotron {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
             margin-bottom: 0;
             border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jumbotron:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            filter: blur(50px);
         }
         
         .jumbotron h1 {
             font-weight: 700;
             margin-bottom: 1.5rem;
+            font-size: 2.5rem;
         }
         
         .jumbotron p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .btn-primary {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            padding: 0.75rem 1.5rem;
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.75rem 1.75rem;
             font-weight: 600;
             transition: all 0.3s ease;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
         }
         
         .btn-primary:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
-            transform: translateY(-2px);
+            background-color: rgba(100, 255, 218, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-primary);
         }
         
         .feature-box {
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: var(--secondary);
             margin-bottom: 2rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(100, 255, 218, 0.1);
         }
         
         .feature-box:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            border-color: var(--accent);
+        }
+        
+        .feature-box i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
         }
         
         .feature-box h2 {
-            color: var(--primary-color);
+            color: var(--white);
             margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature-box p {
+            color: var(--text-secondary);
         }
         
         .contact-info {
-            background-color: var(--light-color);
-            padding: 2rem;
+            background-color: var(--secondary);
+            padding: 2.5rem;
             border-radius: 8px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
         }
         
         .contact-info h3 {
-            color: var(--secondary-color);
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            color: var(--text-secondary);
         }
         
         footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            background-color: var(--secondary);
+            color: var(--text-primary);
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
         }
         
         .social-icons a {
-            color: white;
-            margin-right: 1rem;
-            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin: 0 1rem;
+            font-size: 1.5rem;
             transition: color 0.3s ease;
         }
         
         .social-icons a:hover {
-            color: var(--secondary-color);
+            color: var(--accent);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            color: var(--white);
+            margin-bottom: 3rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: var(--text-secondary);
+            margin-top: 1rem;
+            opacity: 0.2;
+        }
+        
+        .highlight {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .jumbotron {
+                padding: 6rem 1rem 4rem;
+            }
+            
+            .jumbotron h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -124,7 +231,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-code-branch me-2"></i>E&E Technologies
+                <i class="fas fa-code me-2"></i>E&E DevOps
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -135,91 +242,97 @@
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <div class="container text-center py-5">
-            <h1 class="display-4">${title}</h1>
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4">${title}</h1>
             <p class="lead">
                 <c:if test="${not empty msg}">
-                    Hello ${msg}
+                    Hello <span class="highlight">${msg}</span>
                 </c:if>
                 <c:if test="${empty msg}">
-                    Welcome to E&E Technologies - Your DevOps Partner
+                    Transforming Businesses Through <span class="highlight">DevOps Excellence</span>
                 </c:if>
             </p>
-            <div class="mt-4">
-                <a class="btn btn-primary btn-lg me-3" href="#" role="button">
-                    <i class="fas fa-rocket me-2"></i>Explore Courses
+            <div class="mt-5">
+                <a class="btn btn-primary btn-lg me-3" href="#services" role="button">
+                    <i class="fas fa-server me-2"></i>Our Services
                 </a>
-                <a class="btn btn-outline-light btn-lg" href="#" role="button">
-                    <i class="fas fa-phone-alt me-2"></i>Contact Us
+                <a class="btn btn-outline btn-lg" href="#contact" role="button">
+                    <i class="fas fa-paper-plane me-2"></i>Get In Touch
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="container py-5">
-        <div class="row mb-5">
+    <div class="container py-5" id="services">
+        <h2 class="section-title text-center">Our <span class="highlight">Services</span></h2>
+        <div class="row">
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-primary"></i>
-                    <h2>Cloud Solutions</h2>
-                    <p>Expert cloud migration and management services for AWS, Azure, and Google Cloud.</p>
+                    <i class="fas fa-cloud"></i>
+                    <h2>Cloud Architecture</h2>
+                    <p>Design and implementation of scalable, secure cloud infrastructure on AWS, Azure, and GCP.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
-                    <h2>CI/CD Pipelines</h2>
-                    <p>Automated deployment pipelines to accelerate your development lifecycle.</p>
+                    <i class="fas fa-tasks"></i>
+                    <h2>CI/CD Automation</h2>
+                    <p>End-to-end pipeline automation with Jenkins, GitLab CI, and GitHub Actions for rapid deployments.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-shield-alt fa-3x mb-3 text-primary"></i>
-                    <h2>DevSecOps</h2>
-                    <p>Integrated security practices throughout your DevOps workflow.</p>
+                    <i class="fas fa-lock"></i>
+                    <h2>Infrastructure Security</h2>
+                    <p>Comprehensive security hardening and compliance for your cloud-native applications.</p>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container py-5" id="about">
         <div class="row align-items-center">
-            <div class="col-md-8">
-                <h2 class="mb-3">Master DevOps Engineering</h2>
-                <p class="lead">We provide cutting-edge DevOps solutions to streamline your software delivery process and infrastructure management.</p>
-                <div class="contact-info mt-4">
-                    <h3><i class="fas fa-phone me-2"></i>Contact Us: +91 9980923216</h3>
-                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>info@eetech.com</h3>
+            <div class="col-md-6">
+                <h2 class="section-title">Master <span class="highlight">DevOps Engineering</span></h2>
+                <p class="lead">We specialize in enterprise-grade DevOps transformations that deliver measurable business value.</p>
+                <p>Our team of certified experts brings decades of experience implementing DevOps practices at scale for Fortune 500 companies and high-growth startups alike.</p>
+                
+                <div class="contact-info mt-5">
+                    <h3><i class="fas fa-phone-alt me-2"></i>+91 9980923216</h3>
+                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>contact@eetech.dev</h3>
+                    <p class="mt-3">Available 24/7 for critical infrastructure support</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <img src="https://via.placeholder.com/400x300" alt="DevOps Illustration" class="img-fluid rounded">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="DevOps Process" class="img-fluid rounded shadow">
             </div>
         </div>
     </div>
 
-    <footer class="text-center">
-        <div class="container">
-            <div class="social-icons mb-3">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer id="contact">
+        <div class="container text-center">
+            <div class="social-icons mb-4">
                 <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-dev"></i></a>
             </div>
-            <p>&copy; 2025 E&E Technologies. All rights reserved.</p>
-            <p class="mb-0">Delivering excellence in DevOps solutions</p>
+            <p>&copy; 2025 <span class="highlight">E&E Technologies</span>. All rights reserved.</p>
+            <p class="text-muted">Designed and built with <i class="fas fa-heart text-danger"></i> by our DevOps team</p>
         </div>
     </footer>
 
@@ -240,14 +353,34 @@
             });
         });
         
-        // Navbar background change on scroll
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                navbar.style.padding = '1rem 0';
+                navbar.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
             } else {
-                navbar.style.boxShadow = 'none';
+                navbar.style.padding = '1.5rem 0';
+                navbar.style.backgroundColor = 'rgba(10, 25, 47, 0.9)';
             }
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-box').forEach(box => {
+            observer.observe(box);
         });
     </script>
 </body>
