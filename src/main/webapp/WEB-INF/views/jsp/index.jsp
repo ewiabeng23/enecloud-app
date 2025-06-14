@@ -268,7 +268,7 @@
             </p>
             <div class="mt-5">
                 <a class="btn btn-primary btn-lg me-3" href="#services" role="button">
-                    <i class="fas fa-server me-2"></i>Our Services
+                    <i class="fas fa-server me-2"></i>Explore Course
                 </a>
                 <a class="btn btn-outline btn-lg" href="#contact" role="button">
                     <i class="fas fa-paper-plane me-2"></i>Get In Touch
@@ -313,7 +313,7 @@
                 
                 <div class="contact-info mt-5">
                     <h3><i class="fas fa-phone-alt me-2"></i>+91 9980923216</h3>
-                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>contact@eetech.dev</h3>
+                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>peoplecentre@enecloudtech.com</h3>
                     <p class="mt-3">Available 24/7 for critical infrastructure support</p>
                 </div>
             </div>
