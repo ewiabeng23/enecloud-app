@@ -40,7 +40,7 @@
 
 	<div class="row">
 		<div class="col-md-8">
-			<h2>Welcome to Mithun Technologies Private Limited, Bengaluru, Karnataka, India</h2>
+			<h2>Master DevOps Engineering</h2>
 			<h3>Contact @ +91 9980923216</h3>
 		</div>	
 	</div>
@@ -48,7 +48,7 @@
 
 	<hr>
 	<footer>
-		<p>&copy; Mithun Technologies 2025</p>
+		<p>&copy; E&E Technologies 2025</p>
 	</footer>
 </div>
 
