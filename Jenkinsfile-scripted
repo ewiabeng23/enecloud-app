@@ -1,0 +1,54 @@
+node{
+  def mavenHome = tool name: 'maven3.6.3'
+  stage('1.cloning')
+  {
+    git branch: 'hotfix', url: 'https://github.com/enecloudtech/web-app-maven.git'
+  }
+
+  stage('2.Build')
+  {
+     sh "${mavenHome}/bin/mvn clean package"
+  }
+
+  stage('3.CodeQualityAnalysis')
+  {
+    //sh "${mavenHome}/bin/mvn sonar:sonar"
+  }
+
+  stage('4.UploadArtifactory')
+  {
+   // sh "${mavenHome}/bin/mvn deploy"
+  }
+  
+  stage('5.Deploy/QA/UAT')
+  {
+     //use deploy to container plugin
+     deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-credentials', path: '', url: 'http://54.197.29.83:8090')], contextPath: null, war: 'target/*.war'
+  }
+    
+  stage('5.Deploy/staging/Pre-prod')
+  {
+     //use deploy to container plugin
+     deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-credentials', path: '', url: 'http://54.197.29.83:8090')], contextPath: null, war: 'target/*.war'
+  }
+  
+  stage('6.ManualApproval')
+  {
+    sh "echo 'Please review and approve'"
+    timeout(time:200, unit:'MINUTES')
+    {
+      input message: 'Applicaion ready for deployment, Please review and approve'
+    }
+  }
+  
+  stage('7.Deploy/Prod')
+  {
+     //use deploy to container plugin
+     deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-credentials', path: '', url: 'http://54.197.29.83:8090')], contextPath: null, war: 'target/*.war'
+  }
+}
+
+  
+
+
+
