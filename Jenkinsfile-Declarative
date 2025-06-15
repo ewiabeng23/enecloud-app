@@ -1,0 +1,52 @@
+ pipeline{
+    agent {label 'agent1'}
+    tools{
+      maven 'maven3.6.3'
+     //option{}
+    //triggers{}
+    }
+    stages{
+        stage('Cloning'){
+            steps{
+                git branch: 'main', url: 'https://github.com/enecloudtech/web-app-maven.git'
+            }
+        }
+        stage('CodeAnalysis'){
+            steps{
+                //sh "mvn sonar:sonar"
+                sh "echo CodeQualityAnalysis completed"   
+            }
+        }
+        
+        stage('build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('Artifatory'){
+            steps{
+                //sh "mnv deploy"
+                sh "echo we are deploying to nexus"
+            }
+        }
+        stage('DeployQA/UAT'){
+            steps{
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-credentials', path: '', url: 'http://54.197.29.83:8090')], contextPath: null, war: 'target/*.war'
+            }
+        }
+        stage('ManualApproval'){
+            steps{
+                sh "echo Please Review and confirm within 5 days"
+                timeout(time:5, unit:'HOURS'){
+                 input message: 'Application ready for deployment, Please review and approve'
+            }
+            }
+        }
+        stage('DeployProd'){
+            steps{
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-credentials', path: '', url: 'http://54.197.29.83:8090')], contextPath: null, war: 'target/*.war'
+            }
+        }
+      }
+    }
+ 
