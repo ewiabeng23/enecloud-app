@@ -23,7 +23,7 @@ public class HelloWorldService {
 		logger.debug("getTitle() is executed! $name : {}", name);
 
 		if(StringUtils.isEmpty(name)){
-			return "Welcome To E&E Cloud Tech Solutions";
+			return "Welcome To E&E Cloud Technologies";
 		}else{
 			return "Hello " + name;
 		}
