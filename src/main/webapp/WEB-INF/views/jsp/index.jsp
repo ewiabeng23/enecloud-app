@@ -308,12 +308,12 @@
     <div class="container py-5" id="about">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h2 class="section-title">Master <span class="highlight">DevOps Engineering</span></h2>
+                <h2 class="section-title">Master And Learn <span class="highlight">DevOps Engineering</span></h2>
                 <p class="lead">We specialize in enterprise-grade DevOps transformations that deliver measurable business value.</p>
                 <p>Our team of certified experts brings decades of experience implementing DevOps practices at scale for Fortune 500 companies and high-growth startups alike.</p>
                 
                 <div class="contact-info mt-5">
-                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>ewiabng@yaoo.com.com</h3>
+                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>ewiabng@yaoo.com</h3>
                     <p class="mt-3">Available 24/7 for critical infrastructure support</p>
                 </div>
             </div>
@@ -330,6 +330,8 @@
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-dev"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
             </div>
             <p>&copy; 2025 <span class="highlight">E&E Technologies</span>. All rights reserved.</p>
             <p class="text-muted">Designed and built with <i class="fas fa-heart text-danger"></i> by our DevOps team and students</p>
