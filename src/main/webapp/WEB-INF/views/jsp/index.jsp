@@ -71,7 +71,7 @@
         
         .jumbotron {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
+            color: var(--red);
             padding: 8rem 2rem 6rem;
             margin-bottom: 0;
             border-radius: 0;
@@ -151,7 +151,7 @@
         }
         
         .feature-box h2 {
-            color: var(--white);
+            color: var(--red);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
