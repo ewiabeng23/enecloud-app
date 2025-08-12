@@ -232,7 +232,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-code me-2"></i>E&E CloudTech Solutions
+                <i class="fas fa-code me-2"></i>ERIC & ELVIS CloudTech Solutions
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -292,7 +292,7 @@
                 <div class="feature-box">
                     <i class="fas fa-tasks"></i>
                     <h2>CI/CD Automation</h2>
-                    <p>End-to-end pipeline automation with Jenkins, GitLab CI, and GitHub Actions for rapid deployments.</p>
+                    <p>End-to-end pipeline automation with Jenkins, GitLab CI, and GitHub Actions for rapid deployments, monitoring and maintanance.</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -313,7 +313,7 @@
                 <p>Our team of certified experts brings decades of experience implementing DevOps practices at scale for Fortune 500 companies and high-growth startups alike.</p>
                 
                 <div class="contact-info mt-5">
-                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>peoplecentre@enecloudtech.com</h3>
+                    <h3 class="mt-3"><i class="fas fa-envelope me-2"></i>ewiabng@yaoo.com.com</h3>
                     <p class="mt-3">Available 24/7 for critical infrastructure support</p>
                 </div>
             </div>
@@ -332,7 +332,7 @@
                 <a href="#"><i class="fab fa-dev"></i></a>
             </div>
             <p>&copy; 2025 <span class="highlight">E&E Technologies</span>. All rights reserved.</p>
-            <p class="text-muted">Designed and built with <i class="fas fa-heart text-danger"></i> by our DevOps team</p>
+            <p class="text-muted">Designed and built with <i class="fas fa-heart text-danger"></i> by our DevOps team and students</p>
         </div>
     </footer>
 
