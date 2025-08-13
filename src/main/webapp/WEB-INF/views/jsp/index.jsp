@@ -17,14 +17,14 @@
     
     <style>
         :root {
-            --primary: #0a192f;
-            --secondary: #172a45;
-            --accent: #64ffda;
-            --text-primary: #ccd6f6;
-            --text-secondary: #8892b0;
-            --white: #e6f1ff;
+            --primary: #000000; /* Black background */
+            --secondary: #1a1a1a; /* Darker black/grey for contrast */
+            --accent: #FFD700; /* Gold */
+            --text-primary: #FFD700; /* Gold text */
+            --text-secondary: #bfae4f; /* Softer gold */
+            --white: #ffffff; /* White if needed */
         }
-        
+
         body {
             font-family: 'Calibre', 'Inter', sans-serif;
             background-color: var(--primary);
@@ -32,28 +32,28 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-        
+
         .navbar {
-            background-color: rgba(10, 25, 47, 0.9) !important;
+            background-color: rgba(0, 0, 0, 0.9) !important;
             backdrop-filter: blur(10px);
             padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            border-bottom: 1px solid var(--accent);
         }
-        
+
         .navbar-brand {
             font-weight: 700;
             color: var(--accent) !important;
             font-size: 1.5rem;
             letter-spacing: 0.5px;
         }
-        
+
         .nav-link {
             color: var(--text-primary) !important;
             font-weight: 500;
             margin: 0 1rem;
             position: relative;
         }
-        
+
         .nav-link:after {
             content: '';
             position: absolute;
@@ -64,21 +64,21 @@
             background-color: var(--accent);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover:after {
             width: 100%;
         }
-        
+
         .jumbotron {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--red);
+            color: var(--accent);
             padding: 8rem 2rem 6rem;
             margin-bottom: 0;
             border-radius: 0;
             position: relative;
             overflow: hidden;
         }
-        
+
         .jumbotron:before {
             content: '';
             position: absolute;
@@ -87,16 +87,16 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            background: rgba(100, 255, 218, 0.1);
+            background: rgba(255, 215, 0, 0.1);
             filter: blur(50px);
         }
-        
+
         .jumbotron h1 {
             font-weight: 700;
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
         }
-        
+
         .jumbotron p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -105,7 +105,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .btn-primary {
             background-color: transparent;
             border: 1px solid var(--accent);
@@ -116,18 +116,18 @@
             border-radius: 4px;
             letter-spacing: 0.5px;
         }
-        
+
         .btn-primary:hover {
-            background-color: rgba(100, 255, 218, 0.1);
+            background-color: rgba(255, 215, 0, 0.1);
             transform: translateY(-3px);
         }
-        
+
         .btn-outline {
             background-color: transparent;
             border: 1px solid var(--text-secondary);
             color: var(--text-primary);
         }
-        
+
         .feature-box {
             padding: 2.5rem;
             border-radius: 8px;
@@ -135,73 +135,73 @@
             margin-bottom: 2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
-        
+
         .feature-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
             border-color: var(--accent);
         }
-        
+
         .feature-box i {
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 1.5rem;
         }
-        
+
         .feature-box h2 {
-            color: var(--red);
+            color: var(--accent);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
-        
+
         .feature-box p {
             color: var(--text-secondary);
         }
-        
+
         .contact-info {
             background-color: var(--secondary);
             padding: 2.5rem;
             border-radius: 8px;
-            border: 1px solid rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
-        
+
         .contact-info h3 {
             color: var(--accent);
             margin-bottom: 1.5rem;
         }
-        
+
         .contact-info p {
             color: var(--text-secondary);
         }
-        
+
         footer {
             background-color: var(--secondary);
             color: var(--text-primary);
             padding: 3rem 0;
             margin-top: 5rem;
-            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            border-top: 1px solid var(--accent);
         }
-        
+
         .social-icons a {
             color: var(--text-secondary);
             margin: 0 1rem;
             font-size: 1.5rem;
             transition: color 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             color: var(--accent);
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
             color: var(--white);
             margin-bottom: 3rem;
         }
-        
+
         .section-title:after {
             content: '';
             display: block;
@@ -211,16 +211,16 @@
             margin-top: 1rem;
             opacity: 0.2;
         }
-        
+
         .highlight {
             color: var(--accent);
         }
-        
+
         @media (max-width: 768px) {
             .jumbotron {
                 padding: 6rem 1rem 4rem;
             }
-            
+
             .jumbotron h1 {
                 font-size: 2rem;
             }
@@ -229,6 +229,7 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -256,6 +257,7 @@
         </div>
     </nav>
 
+    <!-- JUMBOTRON -->
     <div class="jumbotron text-center">
         <div class="container">
             <h1 class="display-4 mb-4">${title}</h1>
@@ -278,6 +280,7 @@
         </div>
     </div>
 
+    <!-- SERVICES -->
     <div class="container py-5" id="services">
         <h2 class="section-title text-center">Our <span class="highlight">Services</span></h2>
         <div class="row">
@@ -292,7 +295,7 @@
                 <div class="feature-box">
                     <i class="fas fa-tasks"></i>
                     <h2>CI/CD Automation</h2>
-                    <p>End-to-end pipeline automation with Jenkins, GitLab CI, and GitHub Actions for rapid deployments, monitoring and maintanance.</p>
+                    <p>End-to-end pipeline automation with Jenkins, GitLab CI, and GitHub Actions for rapid deployments, monitoring and maintenance.</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -305,6 +308,7 @@
         </div>
     </div>
 
+    <!-- ABOUT -->
     <div class="container py-5" id="about">
         <div class="row align-items-center">
             <div class="col-md-6">
@@ -323,6 +327,7 @@
         </div>
     </div>
 
+    <!-- FOOTER -->
     <footer id="contact">
         <div class="container text-center">
             <div class="social-icons mb-4">
@@ -354,24 +359,24 @@
                 });
             });
         });
-        
+
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.style.padding = '1rem 0';
-                navbar.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
             } else {
                 navbar.style.padding = '1.5rem 0';
-                navbar.style.backgroundColor = 'rgba(10, 25, 47, 0.9)';
+                navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
             }
         });
-        
+
         // Animation on scroll
         const observerOptions = {
             threshold: 0.1
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -380,10 +385,12 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.feature-box').forEach(box => {
             observer.observe(box);
         });
     </script>
 </body>
+</html>
+
 </html>
